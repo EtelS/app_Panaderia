@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 import React from 'react';
-import ShopNavigator from './navigation/ShopNavigator';
 import { StatusBar } from 'expo-status-bar';
 
-export default function App() {
+export default function Categories() {
   return (
-    <>
-      <ShopNavigator />
-    </>
+    <View style={styles.container}>
+      <Text>Categories</Text>
+
+    </View>
   );
 }
 
