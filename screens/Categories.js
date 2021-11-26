@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-export default function Categories() {
+export default function Categories({ navigation, route }) {
   return (
     <View style={styles.container}>
-      <Text>Categories</Text>
+      <Text>Categorias</Text>
+      <Button onPress={() => navigation.navigate('Products')}
+             title='IR A LOS PRODUCTOS' />
 
     </View>
   );
