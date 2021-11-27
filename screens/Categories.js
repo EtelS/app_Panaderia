@@ -9,7 +9,8 @@ export default function Categories({ navigation, route }) {
       <Text>Categorias</Text>
       <Button onPress={() => navigation.navigate('Products')}
              title='IR A LOS PRODUCTOS' />
-
+      <Button onPress={() => navigation.navigate('Detail')}
+             title='IR AL DETALLE' />
     </View>
   );
 }

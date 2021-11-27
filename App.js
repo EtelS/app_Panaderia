@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <ShopNavigator />
-      <StatusBar />
+      <StatusBar style="auto"/>
     </>
   );
 }
