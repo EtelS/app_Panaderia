@@ -1,16 +1,27 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import {categorias} from '../data/categories';
 
-export default function Categories({ navigation, route }) {
+export default function Categories({ navigation }) {
+  const handleSelectProduct = (item) => {
+    navigation.navigate('Products',{
+        name: item.nombre,
+        itemID: item.id
+    })
+  }
   return (
     <View style={styles.container}>
-      <Text>Categorias</Text>
-      <Button onPress={() => navigation.navigate('Products')}
-             title='IR A LOS PRODUCTOS' />
-      <Button onPress={() => navigation.navigate('Detail')}
-             title='IR AL DETALLE' />
+      <FlatList
+        data={categorias}
+        keyExtractor= {(item)=> item.id}
+        renderItem={({item}) =>(
+          <TouchableOpacity onPress={() =>handleSelectProduct(item)}>
+            <Text>{item.nombre}</Text>
+          </TouchableOpacity>
+        )
+        }
+      />
     </View>
   );
 }

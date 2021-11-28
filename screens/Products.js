@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Products() {
+import React from 'react';
+
+export default function Products({navigation, route}) {
+
   return (
     <View style={styles.container}>
-      <Text>Products</Text>
-      <StatusBar style="auto" />
+      <Text>{route.params.name}</Text>
+      
     </View>
   );
 }
