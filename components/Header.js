@@ -15,7 +15,7 @@ const Header = ()=>{
     
     return(
         <>
-        <Text style={styles.title}>Feria Americana</Text>
+        <Text style={styles.title}>Feria Americana!</Text>
         <TouchableOpacity onPress={()=>console.log('Aca deberia ir al carrito')}>
             <AntDesign name="shoppingcart" size={24} color="white" />
         </TouchableOpacity>

@@ -2,7 +2,6 @@ import {COLORS} from '../constants/color';
 import Categories from '../screens/Categories';
 import Detail from '../screens/Detail';
 import Header from '../components/Header';
-import { NavigationContainer } from '@react-navigation/native';
 import Products from '../screens/Products';
 import React from 'react'
 import { StyleSheet } from 'react-native';
@@ -12,8 +11,6 @@ const Stack= createNativeStackNavigator();
 
 
 const ShopNavigator= () =>(
-
-    <NavigationContainer>
         <Stack.Navigator
             screenOptions={{headerStyle:styles.pantinicio}}
                 initialRouteName= "Categories">
@@ -31,8 +28,6 @@ const ShopNavigator= () =>(
                 })} 
                 />
         </Stack.Navigator>
-    </NavigationContainer>
-
 )
 
 const styles= StyleSheet.create({
