@@ -1,38 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import {ApiItems} from '../data/articulos';
-import { articulos } from '../data/articulos';
+import { useSelector } from 'react-redux';
 
 export default function Products({navigation, route}) {
 
   let categoria= route.params.itemID;
 
-  const articulosFiltrados= articulos.filter(art=>art.catid===categoria);
+  const articulosFiltrados= useSelector( state => state.items.filteredItems );
+  const selectedCategories= useSelector(state=> state.categories.selectCategory)
   console.log('articulosFiltrados', articulosFiltrados)
-
-
-
-  // const [articulos, setArticulos]= useState([]);
-
-  // useEffect(()=>{
-  //   const prom= new Promise((resolve, reject)=>{
-  //     setTimeout(()=>{
-  //       if (categoria){
-  //         resolve(
-
-  //           ApiItems.get2(categoria)
-  //         )
-  //       }
-  //     })
-  // })
-  // prom.then((res)=>{
-  //     setArticulos(res)
-  // })
-  // },[categoria]);
-
-  // console.log('articulos', articulos)
-
+  console.log ('selectedCategories', selectedCategories)
 
   return (
     <View style={styles.container}>

@@ -1,7 +1,8 @@
-import {articulos} from '../../data/categories'
+import {articulos} from '../../data/articulos'
 
 const initialState={
     items: articulos,
+    filteredItems: [],
     selected:null,
 
 }
