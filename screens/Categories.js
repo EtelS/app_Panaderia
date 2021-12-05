@@ -2,7 +2,6 @@ import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native
 import { useDispatch, useSelector } from 'react-redux';
 
 import React from 'react';
-import {categorias} from '../data/categories';
 import { selectCategory } from '../store/actions/category.actions';
 
 export default function Categories({ navigation }) {

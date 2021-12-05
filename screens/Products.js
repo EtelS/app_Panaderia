@@ -1,14 +1,13 @@
-import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 export default function Products({navigation, route}) {
 
-  let categoria= route.params.itemID;
 
   const articulosFiltrados= useSelector( state => state.items.filteredItems );
-  const selectedCategories= useSelector(state=> state.categories.selectCategory)
+  const selectedCategories= useSelector(state=> state.categories.selected)
   console.log('articulosFiltrados', articulosFiltrados)
   console.log ('selectedCategories', selectedCategories)
 
