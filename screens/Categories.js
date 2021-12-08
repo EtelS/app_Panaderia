@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 import React from 'react';
 import { selectCategory } from '../store/actions/category.actions';
 
@@ -15,15 +16,22 @@ export default function Categories({ navigation }) {
         itemID: item.id
     });
   };
+  const bottomColor = `rgba(0, 0, 0, ${0})`
+    const maskColor = `rgba(0, 0, 0, ${0.5})`
+
   return (
     <View style={styles.container}>
       <FlatList
         data={categories}
         keyExtractor= {(item)=> item.id}
         renderItem={({item}) =>(
-          <TouchableOpacity onPress={() =>handleSelectCategory(item)}>
+          
+
+          <TouchableOpacity onPress={() =>handleSelectCategory(item)}
+                            style= {styles.touchable}>
             <Text>{item.nombre}</Text>
           </TouchableOpacity>
+
         )
         }
       />
@@ -37,5 +45,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  touchable:{
+    height:50,
+    alignItems:'center',
+    justifyContent: 'center',
+    margin:3,
   },
 });
