@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
 import {useFonts} from 'expo-font';
 

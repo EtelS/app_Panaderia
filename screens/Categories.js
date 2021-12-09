@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { selectCategory } from '../store/actions/category.actions';
 
@@ -16,8 +16,6 @@ export default function Categories({ navigation }) {
         itemID: item.id
     });
   };
-  const bottomColor = `rgba(0, 0, 0, ${0})`
-    const maskColor = `rgba(0, 0, 0, ${0.5})`
 
   return (
     <View style={styles.container}>
@@ -25,15 +23,19 @@ export default function Categories({ navigation }) {
         data={categories}
         keyExtractor= {(item)=> item.id}
         renderItem={({item}) =>(
-          
+       
+          <LinearGradient
+              colors={['#ec6d74', '#EA969A', '#FDC6C9']}
+              style={styles.touchable}>
 
           <TouchableOpacity onPress={() =>handleSelectCategory(item)}
-                            style= {styles.touchable}>
-            <Text>{item.nombre}</Text>
+                            >
+            <Text style={styles.text}>{item.nombre}</Text>
           </TouchableOpacity>
-
+          </LinearGradient>
         )
         }
+        
       />
     </View>
   );
@@ -47,9 +49,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   touchable:{
-    height:50,
+    width:300,
+    height:100,
     alignItems:'center',
     justifyContent: 'center',
-    margin:3,
+    marginTop:20,
+    borderRadius:15,
   },
+
+  text: {
+    backgroundColor: 'transparent',
+    fontSize: 15,
+    color: '#fff',
+  },
+
 });
