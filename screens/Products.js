@@ -1,20 +1,35 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import {filteredItem, selectItem} from '../store/actions/items.actions'
+import { useDispatch, useSelector } from 'react-redux';
 
-import React from 'react';
-import { useSelector } from 'react-redux';
+import ItemDetail from '../components/ItemDetail'
 
 export default function Products({navigation, route}) {
+const dispatch = useDispatch();
+
+const selectedCategories= useSelector(state=> state.categories.selected)
+const articulosFiltrados= useSelector( state => state.items.filteredItem);
+
+useEffect(()=>{
+    dispatch(filteredItem(selectedCategories))
+},[selectedCategories])
 
 
-  const articulosFiltrados= useSelector( state => state.items.filteredItems );
-  const selectedCategories= useSelector(state=> state.categories.selected)
   console.log('articulosFiltrados', articulosFiltrados)
   console.log ('selectedCategories', selectedCategories)
 
+  const renderItem= () => <ItemDetail /> 
+
   return (
     <View style={styles.container}>
-      <Text>{route.params.name}</Text>
+      {/* <Text>{route.params.name}</Text> */}
+      <FlatList 
+        data= {articulosFiltrados}
+        keyExtractor={(item)=> item.id.toString()}
+        renderItem={renderItem}
       
+      />
     </View>
   );
 }

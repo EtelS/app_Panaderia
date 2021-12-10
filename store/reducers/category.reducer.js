@@ -3,7 +3,7 @@ import {categorias} from '../../data/categories'
 
 const initialState={
     categories: categorias,
-    selected:null,
+    selected: null,
 
 }
 
@@ -16,7 +16,7 @@ const CategoryReducer = (state= initialState, action) =>{
             };
         default:
             return state;
-    }
+}
 }
 
 export default CategoryReducer;
