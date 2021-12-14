@@ -1,11 +1,11 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
-import {filteredItem, selectItem} from '../store/actions/items.actions'
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
-import ItemDetail from '../components/ItemDetail'
+import Products from '../components/Products'
+import {filteredItem} from '../store/actions/items.actions'
 
-export default function Products({navigation, route}) {
+const ItemList= ({navigation})=> {
 const dispatch = useDispatch();
 
 const selectedCategories= useSelector(state=> state.categories.selected)
@@ -16,14 +16,11 @@ useEffect(()=>{
 },[selectedCategories])
 
 
-  console.log('articulosFiltrados', articulosFiltrados)
-  console.log ('selectedCategories', selectedCategories)
 
-  const renderItem= () => <ItemDetail /> 
+  const renderItem= (itemData) => <Products item={itemData.item}/> 
 
   return (
     <View style={styles.container}>
-      {/* <Text>{route.params.name}</Text> */}
       <FlatList 
         data= {articulosFiltrados}
         keyExtractor={(item)=> item.id.toString()}
@@ -36,9 +33,11 @@ useEffect(()=>{
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    flex: 1,
     justifyContent: 'center',
+    width:'100%',
   },
 });
+export default connect()(ItemList)

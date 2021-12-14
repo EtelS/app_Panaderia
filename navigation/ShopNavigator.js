@@ -2,7 +2,7 @@ import {COLORS} from '../constants/color';
 import Categories from '../screens/Categories';
 import Detail from '../screens/Detail';
 import Header from '../components/Header';
-import Products from '../screens/Products';
+import ItemList from '../screens/ItemList';
 import React from 'react'
 import { StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,7 +22,7 @@ const ShopNavigator= () =>(
                 />
             <Stack.Screen name="Detail" component={Detail} />
             <Stack.Screen
-                name="Products" component={Products} 
+                name="ItemList" component={ItemList} 
                 options={({ route}) =>({
                     title:route.params.name,
                 })} 

@@ -11,7 +11,7 @@ export default function Categories({ navigation }) {
 
   const handleSelectCategory = (item) => {
     dispatch(selectCategory(item.id));
-    navigation.navigate('Products',{
+    navigation.navigate('ItemList',{
         name: item.nombre,
         itemID: item.id
     });
