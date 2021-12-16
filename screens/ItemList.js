@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     width:'100%',
+    height: Dimensions.get('window').height*0.5,
   },
 });
 export default connect()(ItemList)

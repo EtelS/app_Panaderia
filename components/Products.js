@@ -8,22 +8,30 @@ return(
         <View>
             <Image style={styles.imagen} source= {{uri:item.imagenUrl}} />
         </View>
-        <View>
-            <Text>{item.nombre}</Text>
-            <Text>${item.precio}</Text>
+        <View style={styles.cajaprecionombre}>
+            <Text style={styles.texto}>{item.nombre}</Text>
+            <Text style={styles.texto}>${item.precio}</Text>
         </View>
     </TouchableOpacity>
 )}
 const styles= StyleSheet.create({
     imagen:{
-        height:100,
+        height:200,
         width:'100%'
     },
     touchable:{
         width:300,
-        borderColor:'#000',
-        borderWidth:1,
-        margin:3,   
+        margin:3, 
+
+          
+    },
+    cajaprecionombre:{
+        margin:3,
+    },
+    texto:{
+        fontWeight:'bold',
+        fontSize:20,
+
     },
 })
 export default Products;

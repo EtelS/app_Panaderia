@@ -52,7 +52,7 @@ const TabNavigator = () =>{
 const styles= StyleSheet.create({
     tabBar: {
         position:'absolute',
-        bottom: 25,
+
         left: 20,
         right:20,
         borderRadius: 15,
@@ -63,7 +63,8 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 0.25,
         elevation: 5,
-
+        flex:1,
+        justifyContent:'flex-end',
     },
 })
 export default TabNavigator;
