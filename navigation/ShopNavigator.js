@@ -1,7 +1,7 @@
 import {COLORS} from '../constants/color';
 import Categories from '../screens/Categories';
-import Detail from '../screens/Detail';
 import Header from '../components/Header';
+import ItemDetail from '../screens/ItemDetail';
 import ItemList from '../screens/ItemList';
 import React from 'react'
 import { StyleSheet } from 'react-native';
@@ -20,7 +20,7 @@ const ShopNavigator= () =>(
                     headerTitle: ()=> <Header />
                 }}
                 />
-            <Stack.Screen name="Detail" component={Detail} />
+            <Stack.Screen name="ItemDetail" component={ItemDetail} />
             <Stack.Screen
                 name="ItemList" component={ItemList} 
                 options={({ route}) =>({

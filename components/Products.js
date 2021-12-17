@@ -2,9 +2,10 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 
 import React from 'react';
 
-const Products=({item}) =>{
+const Products=({item, onSelectProduct}) =>{
 return(
-    <TouchableOpacity style={styles.touchable}>
+    <TouchableOpacity style={styles.touchable}
+        onPress={()=> onSelectProduct(item)}>
         <View>
             <Image style={styles.imagen} source= {{uri:item.imagenUrl}} />
         </View>
